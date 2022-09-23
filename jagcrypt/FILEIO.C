@@ -242,7 +242,7 @@ WriteHILO(char *filename, int nosplit)
 
 // Write a single file, no splitting at all, big endian format
 void
-WriteSINGLE(char *filename, int nosplit)
+WriteSINGLE(char *filename)
 {
 	FILE *outfile;			/* file pointers for output file */
 	FILE *infile;			/* input file */

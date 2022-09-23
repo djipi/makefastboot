@@ -142,7 +142,7 @@ GAMEOVR2:
 
 	if ((bigbuf[0] != 0xf6) && (bigbuf[0] != 0xff) && (bigbuf[0] != 0xfe)) {
 		printf("File does not seem to have a header on it - add new header? (Don't do this if not a ROM)\n");
-		gets(buf);
+		gets_s(buf, sizeof(buf));
 		if (tolower(buf[0]) != 'y') return -1;
 
 		if (sz>=4*1024*1024-8192) sz=4*1024*1024-8192;
@@ -164,7 +164,7 @@ GAMEOVR2:
 	memcpy(bigbuf, fastboot, 132);
 
 	printf("Set cartridge width:\n  1: 8-bit\n  2:16-bit\n  3:32-bit (Default)\n> ");
-	gets(buf);
+	gets_s(buf, sizeof(buf));
 	int width = 0;
 	switch (buf[0]) {
 		case '1':	width = 0; break;
@@ -175,7 +175,7 @@ GAMEOVR2:
 	
         // double check these times... I'm assuming 25MHz system clock
 	printf("Set cartridge speed:\n  1:10 clocks - 400nS (Default)\n  2: 8 clocks - 320 nS\n  3: 6 clocks - 240nS\n  4: 5 clocks - 200nS\n> ");
-	gets(buf);
+	gets_s(buf, sizeof(buf));
 	switch(buf[0]) {
 		default:	width |= 0; break;
 		case '2':	width |= 8; break;
@@ -189,7 +189,7 @@ GAMEOVR2:
 	unsigned int start = 0x802000;
 	unsigned int end = (sz+0x800000) & 0xfffffc;
 	unsigned int cnt = (end-start)/4;
-	for (int idx=0; idx<cnt; idx++) {
+	for (unsigned int idx=0; idx<cnt; idx++) {
 		// big endian data, so do it all by hand
 		int pos = idx*4+start-0x800000;
 		checksum+=bigbuf[pos]<<24;
@@ -225,7 +225,7 @@ GAMEOVR2:
 	// split question doesn't come up for the others right now
 	if ((width&0x06)==2) {
 		printf("Output swapped version for 16-bit EPROM? (Y/N) > ");
-		gets(buf);
+		gets_s(buf, sizeof(buf));
 		if ((buf[0]=='y')||(buf[0]=='Y')) {
 			char fn[512];
 			strcpy(fn, argv[1]);
