@@ -15,7 +15,7 @@ ALNFLAGS = -v -v -e -g -l -m -rd -a $(STADDR) x 4000
 .SUFFIXES:      .o .s
 
 .s.o:
-	smac $(MACFLAGS) $*
+	rmac $(MACFLAGS) $*
  
 #====================================================================
 #       EXECUTABLES
@@ -25,6 +25,6 @@ OBJ = bootcode.o
  
 mou.cof: $(OBJ)
 #	aln $(ALNFLAGS) -o mou.cof $(OBJ) -i ..\\data\\jaguar.bin jagbits
-	sln $(ALNFLAGS) -o bootcode.cof $(OBJ)
+	rln $(ALNFLAGS) -o bootcode.cof $(OBJ)
 
 bootcode.o: bootcode.s
