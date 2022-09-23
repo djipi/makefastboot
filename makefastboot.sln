@@ -1,9 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "makefastboot", "makefastboot\makefastboot.vcproj", "{30A1BC6A-A111-415B-B94F-C608B76A6949}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1082
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "makefastboot", "makefastboot\makefastboot.vcxproj", "{30A1BC6A-A111-415B-B94F-C608B76A6949}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jagcrypt", "jagcrypt\jagcrypt.vcproj", "{53684165-6C90-46B3-AA2D-06C8411634B5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jagcrypt", "jagcrypt\jagcrypt.vcxproj", "{53684165-6C90-46B3-AA2D-06C8411634B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DB9477A-D169-44A2-8307-9EA04E3CF04E}
 	EndGlobalSection
 EndGlobal

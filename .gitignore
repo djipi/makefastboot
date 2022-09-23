@@ -13,3 +13,6 @@ debug/*
 */*.scc
 */*.user
 *.obj
+*.o
+.vs/
+Backup/
